@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ol>
+        <li>Premier élément</li>
+        <li>Second élément</li>
+        <ul>
+            <li>Elément sans ordre</li>
+        </ul>
+    </ol>
+
+    <ul>
+        <li id="premier"></li>
+        <li id="Deux"></li>
+        <li id="troisième"></li>
+    </ul>
+    <p>Premier texte</p>
+    <p>Dieuxème texte</p>
+    <p>Troisième texte</p>
+
+    <ul>
+        <li>Premier (donc indice 0)</li>
+        <li>Deuxième (donc indice 1)</li>
+        <li>Troisième (donc indice 2)</li>
+    </ul>
+    <ul id="courses">
+        <li class="legume">Aubergine</li>
+        <li class="legume">Carotte</li>
+        <li class="fruit">Pomme</li>
+    </ul>
+    
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+        <script>
+        //selectionnée tous les li qui descendent directement de ol
+        $("ol > li").css("color", "yellow");
+        //les jumeaux : selectionner les frères li du premier li
+        $("li#premier ~ li")
+        //selectionnée le premier frère d'un li donné
+        $("li#premier + li")
+        //les filtres : selectionné la première occurrence d'un élément
+        $("p:first")
+        //les filtres: selectionné la derniere occurrence d'un élément
+        $("p:last")
+        //selectionnée l'élément à un indice donné (c'est la que les tableaux devienne bien pratique)
+        $("p:eq(1)")
+        //selectionnée le ou  les élément(s) situé(s) à un indice supérieur au nombre spécifié
+        $("p:gt(0)")
+        //même concept mais pour les éléments à un indice plus pétit que les nombre spécifié.
+        $("p:lt(2)")
+        //sélectionnée les éléments qui ne sont pas ... eh bien, le sélecteur ! 
+        $("p:not('.legume')")
+        console.log("Bonjour jquery")
+        //evenement click avec jquery la plus lisible
+        $('p').on('click', function(){
+            alert("Quelqu'un a cliqué sur un paragraphe")
+        })
+        //racourci pour la methode click
+        $('p').click(function(){
+        alert("Quelqu'un a cliqué sur un paragraphe!")
+        })
+    </script>
+
+
+</body>
+</html>
